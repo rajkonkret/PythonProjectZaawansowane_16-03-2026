@@ -199,3 +199,21 @@ print(lista)  # [1, 2, 3, 4, 5, 7, 8]
 print(dict.fromkeys(lista))
 print(list(dict.fromkeys(lista)))
 # [1, 2, 3, 4, 5, 7, 8]
+
+# frozenset
+d = {}  # pusty słownik
+# d[{1, 2, 3}] = "test" # TypeError: cannot use 'set' as a dict key (unhashable type: 'set')
+d = {}
+key = frozenset([1, 2, 3])
+d[key] = "test"
+print(d)
+print(d[key])
+# {frozenset({1, 2, 3}): 'test'}
+# test
+
+# TypeError: cannot use 'set' as a set element (unhashable type: 'set')
+# s = {{1, 2}, {3, 4}}
+# print(s)
+
+s = {frozenset([1, 2]), frozenset([3, 4])}
+print(s)  # {frozenset({3, 4}), frozenset({1, 2})}
