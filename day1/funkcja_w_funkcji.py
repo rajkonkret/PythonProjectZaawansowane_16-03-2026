@@ -18,11 +18,60 @@ def bonus(punkty: int, bonus: float) -> float:
 def osoba(funkcja: Any, *args) -> Any:
     return funkcja(*args)
 
+
 # funkcje wyższego rzędu
 print(osoba(witaj, "leon"))
 print(osoba(konkurs, "Anna", 78, 9))
 print(osoba(bonus, 66, 0.2))
+
+
 # Kilka przykładów funkcji
 # Miło Cię widzieć leon
 # Uczestnik konkuru Anna, liczba punktów: 78, zajęte miejsca: 9
 # 13.200000000000001
+
+# dekorator
+# przyjmuje inną funkcję
+# zwraca wynik tej funkci plus dodakowe działanie
+
+def startstop(funkcja):
+    def wrapper(*args, **kwargs):
+        print(60 * "-")
+        print("Startowanie procesu...")
+        funkcja(*args, **kwargs)
+        print("Kończenie procesu....")
+
+    return wrapper  # zwróći adres, referencję
+
+
+def zawijanie(w_co):
+    print(f"Zawijanie czekoladek w {w_co}")
+
+
+zw = startstop(zawijanie)
+print(zw)  # <function startstop.<locals>.wrapper at 0x0000013A4976D7A0>
+print(type(zw))  # <class 'function'>
+zw("sreberka")
+
+
+# ------------------------------------------------------------
+# Startowanie procesu...
+# Zawijanie czekoladek w sreberka
+# Kończenie procesu....
+
+@startstop
+def dmuchanie(czego):
+    print(f"Dmuchanie {czego} na urodziny")
+
+
+dmuchanie("baloników")
+# ------------------------------------------------------------
+# Startowanie procesu...
+# Dmuchanie baloników na urodziny
+# Kończenie procesu....
+
+dmuchanie("Świeczek na torcie")
+# ------------------------------------------------------------
+# Startowanie procesu...
+# Dmuchanie Świeczek na torcie na urodziny
+# Kończenie procesu....
