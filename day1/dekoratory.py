@@ -21,3 +21,12 @@ def usypiacz(funkcja):
     return wrapper
 
 
+# kolejność dekoratorów ma znaczenie
+@pomiarczasu
+@usypiacz
+def big_lista():
+    sum([i ** 5 for i in range(10_000_000)])
+
+
+big_lista()
+# Czas wykonania funkcji: 5.676693677902222 s.
