@@ -124,3 +124,36 @@ print(lista is lista3)  # True
 lista_copy = lista.copy()  # kopia listy
 print(id(lista_copy))  # 2274821684672
 print(id(lista))  # 2274818969536
+
+# teksty są niemutowalne
+# pula tekstów
+tekst = "Radek"
+tekst.upper()
+""" Return a copy of the string converted to uppercase. """
+print(tekst)  # Radek
+
+# krotka (tuple)
+# pozwala lepiej zarządzać pamięcią
+a = ()
+print(a)  # <class 'tuple'>
+print(type(a))  # <class 'tuple'>
+
+# del - usuniecie obiektu z pamięci
+
+tupla = "tomek", "radek", "zenek", "marek"
+print(type(tupla))  # <class 'tuple'>
+print(tupla)  # ('tomek', 'radek', 'zenek', 'marek')
+
+a = 1,
+print(a)  # (1,)
+print(type(a))  # <class 'tuple'>
+
+a = (1,)
+print(a)  # (1,)
+
+# tupla[0] = "Roman"  # TypeError: 'tuple' object does not support item assignment
+# del tupla
+# print(tupla) # NameError: name 'tupla' is not defined. Did you mean: 'tuple'?
+
+print(sorted(tupla))  # ['marek', 'radek', 'tomek', 'zenek']
+print(tupla)  # ('tomek', 'radek', 'zenek', 'marek')
