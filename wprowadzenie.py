@@ -171,3 +171,16 @@ print(zbior2)
 # {35, 20, 10, 45, 15}
 # {65, 35, 45, 55}
 
+print(zbior1 & zbior2)  # {35, 45}
+print(zbior1.intersection(zbior2))  # {35, 45}
+
+# suma zbiorow
+print(zbior1 | zbior2)  # {65, 35, 10, 45, 15, 20, 55}
+print(zbior1.union(zbior2))  # {65, 35, 10, 45, 15, 20, 55}
+
+lista = [1, 2, 6, 3, 4, 6, 5, 6, 7, 6, 8]
+zbior = set(lista)
+print(zbior)  # {1, 2, 3, 4, 5, 6, 7, 8}
+# zbiór nie ma indeksu, nie zachowuje kolejności
+# hashowalny
+print(4 in zbior)  # True
