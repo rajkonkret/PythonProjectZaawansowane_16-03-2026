@@ -75,3 +75,15 @@ dmuchanie("Świeczek na torcie")
 # Startowanie procesu...
 # Dmuchanie Świeczek na torcie na urodziny
 # Kończenie procesu....
+
+liczby = [45, 262, 5, 8, 49, -3, 53, 25, 22, 12, 48, 90, 32, 8, 7, 3, 2]
+parzyste = list(filter(lambda x: x % 2 == 0, liczby))
+print(parzyste)
+
+cube = list(map(lambda x: x ** 2, liczby))
+print(cube)
+# [2025, 68644, 25, 64, 2401, 9, 2809, 625, 484, 144, 2304, 8100, 1024, 64, 49, 9, 4]
+
+# list coprehension
+dane = [i ** 2 for i in range(100)]
+print(dane)
