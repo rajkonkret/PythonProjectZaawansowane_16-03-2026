@@ -104,3 +104,23 @@ print(True & False)  # porównanie bitowe
 print(4 & 2)  # 0
 print(4 and 2)  #
 print(4 and 2)  # 2
+
+# kolekcja
+# lista, krotka (tuple), zbiór, słownik, frozenset
+
+# lista - dowolne typy na raz, mutowalna, zachowuje kolejność
+lista = list()
+lista2 = []
+lista = [9, 8, 8, 9, 9]
+lista2 = [10, 20, 20, 20]
+
+lista3 = lista  # kopia referencji, adresu
+print(lista3)
+print(lista)
+print(id(lista))
+print(id(lista3))  # 1693199552448
+print(lista is lista3)  # True
+
+lista_copy = lista.copy()  # kopia listy
+print(id(lista_copy))  # 2274821684672
+print(id(lista))  # 2274818969536
