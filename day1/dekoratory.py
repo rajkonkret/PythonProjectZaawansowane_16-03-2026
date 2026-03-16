@@ -101,6 +101,7 @@ def memoizacja(funkcja):
         else:
             wynik = funkcja(*args)
             cache[args] = wynik
+            print(cache)
             return wynik
 
     return wrapper
@@ -114,7 +115,7 @@ def fiboacci(n):
         return fiboacci(n - 1) + fiboacci(n - 2)
 
 
-print(fiboacci(10))
+print(fiboacci(3))
 # Zwracamy wynik z cache dla argumentów: (1,)
 # Funkcja: fiboacci((1,) -> 1)
 # Zwracamy wynik z cache dla argumentów: (2,)
@@ -122,3 +123,4 @@ print(fiboacci(10))
 # Funkcja: fiboacci((1,) -> 1)
 # Zwracamy wynik z cache dla argumentów: (0,)
 # Funkcja: fiboacci((0,) -> 0)
+print(fiboacci(2))
