@@ -29,4 +29,23 @@ def big_lista():
 
 
 big_lista()
+
+
 # Czas wykonania funkcji: 5.676693677902222 s.
+
+def debug(funkcja):
+    def wrapper(*args):
+        print(f"Wołąna funkcja: {funkcja.__name__}")
+        funkcja(*args)
+
+    return wrapper
+
+
+@debug
+def info(i):
+    print(f"Ważny kod: {i}")
+
+
+info(8457375375934096)
+# Wołąna funkcja: info
+# Ważny kod: 8457375375934096
