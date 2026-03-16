@@ -47,5 +47,30 @@ def info(i):
 
 
 info(8457375375934096)
+
+
 # Wołąna funkcja: info
 # Ważny kod: 8457375375934096
+
+# dekarator z parametrami
+def spradz_typy(typy):
+    def dekorator(funkcja):
+
+        def wrapper(*args, **kwargs):
+            for (arg, typ) in zip(args, typy):  # zip() - łaczy w pary
+                print(arg, typ)
+                if not isinstance(arg, typ):
+                    raise TypeError(f"Argument: {arg} nie jest typu: {typ}")
+            return funkcja(*args, **kwargs)
+
+        return wrapper
+
+    return dekorator
+
+
+@spradz_typy((int, int))
+def mnozenie(a, b):
+    return a * b
+
+
+mnozenie(6, 8)
