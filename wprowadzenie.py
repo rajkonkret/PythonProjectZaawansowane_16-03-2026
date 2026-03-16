@@ -157,3 +157,17 @@ print(a)  # (1,)
 
 print(sorted(tupla))  # ['marek', 'radek', 'tomek', 'zenek']
 print(tupla)  # ('tomek', 'radek', 'zenek', 'marek')
+
+# zbiór (set) - brak duplikatów
+zb = set()
+print(zb)  # set() - pusty zbiór
+
+zbior1 = {10, 15, 15, 20, 35, 45}
+zbior2 = {35, 45, 45, 55, 65}
+
+# ctrl d - powielenie linii
+print(zbior1)
+print(zbior2)
+# {35, 20, 10, 45, 15}
+# {65, 35, 45, 55}
+
