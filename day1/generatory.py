@@ -111,3 +111,26 @@ def send_gen():
             x = x + 1
         else:
             x = 3 * y
+
+
+g = send_gen()
+print("_" * 60)
+print(next(g))
+print(next(g))
+print(next(g))
+print(next(g))
+print(next(g))
+print(next(g))
+print(g.send(122))
+print(next(g))
+print(next(g))
+print(g.send(15))
+print(next(g))
+print(g.send("a"))
+# 5
+# 366
+# 367
+# 368
+# 45
+# 46
+# aaa
