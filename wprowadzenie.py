@@ -60,3 +60,47 @@ b = Decimal(0.2)
 print(a + b)  # 0.3000000000000000166533453694
 print(a, b)
 # 0.1000000000000000055511151231257827021181583404541015625 0.200000000000000011102230246251565404236316680908203125
+
+# bool
+print(True)
+print(False)
+
+print(bool(0))  # False
+print(bool(1))  # True
+
+print(bool("radek"))  # True
+print(bool(""))  # False
+a = 100
+b = 100
+print(a == b)
+print(a is b)
+
+a = 1025
+b = 1025
+print(a is b)  # True
+
+# powyżej 1024
+a = int("1025")
+b = int("1025")
+
+print(a == b)  # True
+print(a is b)  # False
+
+a = int("100")
+b = int("100")
+
+print(a == b)  # True
+print(a is b)  # True
+
+print(True and False)  # False
+print(True or False)  # True
+
+print(True & False)  # porównanie bitowe
+
+# 4 = 100
+# 2 = 010
+#     000
+
+print(4 & 2)  # 0
+print(4 and 2)  #
+print(4 and 2)  # 2
