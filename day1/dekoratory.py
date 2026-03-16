@@ -73,4 +73,13 @@ def mnozenie(a, b):
     return a * b
 
 
-mnozenie(6, 8)
+try:
+    mnozenie(6, 8)
+    mnozenie(6, "osiem")
+except TypeError as e:
+    print("Bład:", e)
+# 6 <class 'int'>
+# 8 <class 'int'>
+# 6 <class 'int'>
+# osiem <class 'int'>
+# Bład: Argument: osiem nie jest typu: <class 'int'>
