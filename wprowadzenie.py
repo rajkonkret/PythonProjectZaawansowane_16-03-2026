@@ -184,3 +184,18 @@ print(zbior)  # {1, 2, 3, 4, 5, 6, 7, 8}
 # zbiór nie ma indeksu, nie zachowuje kolejności
 # hashowalny
 print(4 in zbior)  # True
+
+# słownik - klucz - wartości
+# odpowiednik jsona
+slownik = {"name": "Radek"}
+print(slownik['name'])
+
+lista = [1, 2, 6, 3, 4, 6, 5, 6, 7, 6, 8]
+while 6 in lista:
+    lista.remove(6)
+print(lista)  # [1, 2, 3, 4, 5, 7, 8]
+
+# {1: None, 2: None, 3: None, 4: None, 5: None, 7: None, 8: None}
+print(dict.fromkeys(lista))
+print(list(dict.fromkeys(lista)))
+# [1, 2, 3, 4, 5, 7, 8]
