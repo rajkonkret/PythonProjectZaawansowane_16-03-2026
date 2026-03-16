@@ -78,8 +78,47 @@ try:
     mnozenie(6, "osiem")
 except TypeError as e:
     print("Bład:", e)
+
+
 # 6 <class 'int'>
 # 8 <class 'int'>
 # 6 <class 'int'>
 # osiem <class 'int'>
 # Bład: Argument: osiem nie jest typu: <class 'int'>
+
+# zasymulowac cache dla funkcji
+# jesli funkcja wywołąna z argumentami jakie znamy juz -> wynik z cache
+# w przeciwnym wypadku dokonac nowego obliczenia i zwrócic wynik
+
+def memoizacja(funkcja):
+    cache = {}
+
+    def wrapper(*args):
+        if args in cache:
+            print(f"Zwracamy wynik z cache dla argumentów: {args}")
+            print(f"Funkcja: {funkcja.__name__}({args} -> {funkcja(*args)})")
+            return cache[args]
+        else:
+            wynik = funkcja(*args)
+            cache[args] = wynik
+            return wynik
+
+    return wrapper
+
+
+@memoizacja
+def fiboacci(n):
+    if n <= 1:
+        return n
+    else:
+        return fiboacci(n - 1) + fiboacci(n - 2)
+
+
+print(fiboacci(10))
+# Zwracamy wynik z cache dla argumentów: (1,)
+# Funkcja: fiboacci((1,) -> 1)
+# Zwracamy wynik z cache dla argumentów: (2,)
+# Zwracamy wynik z cache dla argumentów: (1,)
+# Funkcja: fiboacci((1,) -> 1)
+# Zwracamy wynik z cache dla argumentów: (0,)
+# Funkcja: fiboacci((0,) -> 0)
