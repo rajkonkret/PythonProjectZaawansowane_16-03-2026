@@ -61,6 +61,8 @@ def wznowienie(n, k):
 print(wznowienie(8, 4))
 
 print(list(wznowienie(8, 4)))
+
+
 # <generator object wznowienie at 0x0000025B39D98FB0>
 # Wstrzymanie działania
 # Wznowienie działania 1
@@ -69,3 +71,43 @@ print(list(wznowienie(8, 4)))
 # Wznowienie działania 4
 # Wznowienie działania 5
 # [3005, 12, 24, 112, 7.0]
+
+def gen2():
+    n = 1
+    while True:
+        result = yield n
+        print(result)
+        if result == "stop":
+            break
+        n += 1
+        print(n)
+        print(50 * "-")
+
+
+g2 = gen2()
+print(next(g2))
+print(next(g2))
+print(next(g2))
+print(next(g2))
+print(next(g2))
+
+g2.send("OK")  # OK
+
+print(next(g2))
+
+try:
+    g2.send("stop")  # StopIteration
+except StopIteration as e:
+    print("Koniec danych:", e)
+
+
+# Koniec danych:
+
+def send_gen():
+    x = 0
+    while True:
+        y = yield x
+        if y is None:
+            x = x + 1
+        else:
+            x = 3 * y
