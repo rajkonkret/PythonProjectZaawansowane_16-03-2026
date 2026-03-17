@@ -9,7 +9,7 @@ class CacheFunction:
             print(f"Wynik w cache dla argumentów: {args}")
             return self.cache[args]
 
-        print(f"Wynik obliczeń dla argumentó: {args}")
+        print(f"Wynik obliczeń dla argumentów: {args}")
         result = self.func(*args)
         self.cache[args] = result
         return result
