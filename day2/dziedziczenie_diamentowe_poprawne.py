@@ -30,6 +30,13 @@ class D(B, C):
         print("D.__init__ end")
 
 
+class E(C, B):
+    def __init__(self):
+        print("E.__init__ start")
+        super().__init__()
+        print("E.__init__ end")
+
+
 print(D.__mro__)
 # (<class '__main__.D'>, <class '__main__.B'>, <class '__main__.C'>, <class '__main__.A'>, <class 'object'>)
 
@@ -42,3 +49,5 @@ d = D()
 # C.__init__ end
 # B.__init__ end
 # D.__init__ end
+
+e = E()
