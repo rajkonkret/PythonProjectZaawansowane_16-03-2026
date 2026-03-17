@@ -66,3 +66,46 @@ my_sum_np(150_000_000)
 # Czas wykonania funkcji: 0.5510263442993164 s.
 print(6.876 / 0.5010)  # 12.47912885662432
 print(1.268 / 0.066)  # 19.21212121212121
+
+print(50 * "-")
+lista = list(range(1_000_000))
+
+
+@pomiarczasu
+def my_for_mul():
+    l = []
+    for i in lista:
+        l.append(i * 2)
+
+
+funkcja = lambda x: x * 2
+
+
+@pomiarczasu
+def my_for_with_map_mul():
+    l_map = list(map(funkcja, lista))
+
+
+@pomiarczasu
+def my_for_list_compre():
+    l = [i * 2 for i in lista]
+
+
+@pomiarczasu
+def my_for_with_map_operator():
+    l_map = list(map(partial(operator.mul, 2), lista))
+
+
+my_for_mul()
+my_for_with_map_mul()
+my_for_list_compre()
+# --------------------------------------------------
+# Czas wykonania funkcji: 0.09656953811645508 s.
+# Czas wykonania funkcji: 0.11460494995117188 s.
+# Czas wykonania funkcji: 0.0792994499206543 s.
+my_for_with_map_operator()
+# --------------------------------------------------
+# Czas wykonania funkcji: 0.09587359428405762 s.
+# Czas wykonania funkcji: 0.11596465110778809 s.
+# Czas wykonania funkcji: 0.08292293548583984 s.
+# Czas wykonania funkcji: 0.08803892135620117 s.
