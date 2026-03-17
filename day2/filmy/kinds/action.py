@@ -14,6 +14,9 @@ class ActionFilm(Film, AwardWinning):
 
     def get_info(self):
         info = f"{self.title}, reżyseria: {self.director}, produkcja: {self.year},  czas trwnia [h]: {self.duration}"
+        if self.awards:
+            info += f" | Nagrody: {','.join(self.awards)}"
+        return info
 
 
 if __name__ == '__main__':
