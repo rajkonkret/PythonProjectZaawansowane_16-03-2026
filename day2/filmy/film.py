@@ -8,3 +8,14 @@ class Film(ABC):
         self.year = year
         self.duration = duration
         self.create_film()
+
+    def create_film(self):
+        print(f"Utworzono nowy obiekt oparty na klasie {self.__class__.__name__}")
+
+    @abstractmethod
+    def play(self):
+        ...
+
+    @abstractmethod
+    def get_info(self):
+        pass
