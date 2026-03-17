@@ -6,6 +6,7 @@ Trzy przypadki użycia funkcji __call__
 """
 from counter_zad1 import CallCounter
 from validator import RangeValidator
+from cache import CacheFunction
 
 print(70 * "-")
 counter = CallCounter()
@@ -32,3 +33,36 @@ valid(44)
 # Wartość 17 mieści się w przedziale (min:2, max:20)
 # Wartość 8 mieści się w przedziale (min:2, max:20)
 # Wartość 44 jest poza przedziałęm (min:2, max:20)
+
+print(70 * "-")
+
+
+def efunction(x, y):
+    return x ** y + y ** x
+
+
+cache_func = CacheFunction(efunction)
+print(cache_func(2, 3))
+print(cache_func(2, 3))
+print(cache_func(2, 3))
+print(cache_func(2, 3))
+print(cache_func(2, 3))
+# ----------------------------------------------------------------------
+# Wynik obliczeń dla argumentó: (2, 3)
+# 17
+# Wynik w cache dla argumentów: (2, 3)
+# 17
+# Wynik w cache dla argumentów: (2, 3)
+# 17
+# Wynik w cache dla argumentów: (2, 3)
+# 17
+# Wynik w cache dla argumentów: (2, 3)
+# 17
+
+print(cache_func(12, 1))
+# Wynik obliczeń dla argumentó: (12, 1)
+# 13
+
+print(cache_func(2, 3))
+# Wynik w cache dla argumentów: (2, 3)
+# 17
