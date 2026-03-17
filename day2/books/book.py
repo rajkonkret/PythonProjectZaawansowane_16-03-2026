@@ -1,6 +1,12 @@
 #  pydoc -b wywołanie serwera projektu
 # pydoc -w .\books\book.py
-class Book:
+from abc import ABC, abstractmethod
+
+# klasa abstrakcyjna
+# nie można utworzyc obiektów tej klasy
+# należy dziedziczyć po niej
+# klasa dziedzicząca musi nadpisać metody abstrakcyjne
+class Book(ABC):
     """
     Klasa Book
     """
@@ -20,4 +26,13 @@ class Book:
 
     def __repr__(self):
         return f"Obiekt klasy {self.__class__.__name__} ({self.title} -> {self.author})"
+
     # __str__ działą tylko dla print() i str()
+
+    @abstractmethod
+    def get_info(self):
+        pass
+
+    @abstractmethod
+    def read(self):
+        pass
