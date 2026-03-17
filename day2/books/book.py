@@ -2,6 +2,7 @@
 # pydoc -w .\books\book.py
 from abc import ABC, abstractmethod
 
+
 # klasa abstrakcyjna
 # nie można utworzyc obiektów tej klasy
 # należy dziedziczyć po niej
@@ -28,6 +29,11 @@ class Book(ABC):
         return f"Obiekt klasy {self.__class__.__name__} ({self.title} -> {self.author})"
 
     # __str__ działą tylko dla print() i str()
+
+    # pozwala uzyc obiektu jako funcji
+    # novel -> novel()
+    def __call__(self, price):
+        return f"Ilość stron z dodatkami: {self.page + 5}, cena: {price}"
 
     @abstractmethod
     def get_info(self):

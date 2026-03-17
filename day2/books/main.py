@@ -31,3 +31,12 @@ print(novel)
 print(textbook)
 # Obiekt klasy Novel (1984 -> George Orwell)
 # Obiekt klasy TextBook (Python programming -> Jhon Brown)
+
+# wykorzystanie obiektu jako funkcja
+# __call__
+print(novel(45))
+print(novel(60))
+print(textbook(60))
+# Ilość stron z dodatkami: 333, cena: 45
+# Ilość stron z dodatkami: 333, cena: 60
+# Ilość stron z dodatkami: 472, cena: 60
