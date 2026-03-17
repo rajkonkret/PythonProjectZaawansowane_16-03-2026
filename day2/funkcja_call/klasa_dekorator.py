@@ -10,7 +10,11 @@ class debug:
         return wrapper
 
 
+@debug("TEST")
 def f(x):
     return x + 1
 
+
 print(f(10))
+# [TEST] calling f
+# 11
