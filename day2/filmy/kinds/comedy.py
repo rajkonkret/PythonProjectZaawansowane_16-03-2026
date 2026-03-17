@@ -16,3 +16,7 @@ class ComedyFilm(Film, SeriesPart):
         series_info = self.get_series_info()
         info += f' | {series_info}'
         return info
+
+
+if __name__ == '__main__':
+    print(ComedyFilm.__mro__)
