@@ -42,3 +42,6 @@ class People:
 u = People("Tomek", 30)
 print(u.name)
 # u.imie = "Zenek" # AttributeError: 'People' object has no attribute 'imie' and no __dict__ for setting new attributes
+
+u.age = 123
+print(u.age)  # 123
