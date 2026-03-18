@@ -36,6 +36,43 @@ print(first.math_grade, first.alg_grade, first.prog_grade)
 # Termin I
 # 34 13 55
 
+# SET deskryptor id: 1600389876432
+# Instance id: 1600389880800
+# SET deskryptor id: 1600389811088
+# Instance id: 1600389880800
+# SET deskryptor id: 1600389811408
+# Instance id: 1600389880800
+# Termin I
+# GET deskryptor id: 1600389876432
+# Instance id: 1600389880800
+# GET deskryptor id: 1600389811088
+# Instance id: 1600389880800
+# GET deskryptor id: 1600389811408
+# Instance id: 1600389880800
+# 34 13 55
+# SET deskryptor id: 1600389876432
+# Instance id: 1600389815568
+# SET deskryptor id: 1600389811088
+# Instance id: 1600389815568
+# SET deskryptor id: 1600389811408
+# Instance id: 1600389815568
+# Termin II
+# GET deskryptor id: 1600389876432
+# Instance id: 1600389815568
+# GET deskryptor id: 1600389811088
+# Instance id: 1600389815568
+# GET deskryptor id: 1600389811408
+# Instance id: 1600389815568
+# 53 73 89
+# Archiwum (ExamG) TERMIN I
+# GET deskryptor id: 1600389876432
+# Instance id: 1600389880800
+# GET deskryptor id: 1600389811088
+# Instance id: 1600389880800
+# GET deskryptor id: 1600389811408
+# Instance id: 1600389880800
+# 53 73 89
+
 sec = ExamG()
 sec.math_grade = 53
 sec.alg_grade = 73
