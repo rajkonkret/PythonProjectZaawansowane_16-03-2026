@@ -1,8 +1,11 @@
 # deskryptor
+from weakref import WeakKeyDictionary
+
 
 class LoggedPositiveInt:
     def __init__(self):
-        self._values = {}
+        # self._values = {}
+        self._values = WeakKeyDictionary()
 
     def __get__(self, instance, owner):
         print(f"{instance}")
