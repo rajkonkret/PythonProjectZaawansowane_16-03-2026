@@ -39,3 +39,15 @@ except AttributeError as e:
     print("Bład:", e)
 # [LOG] Próba dostępu do atrybutu: _secret
 # Bład: Brak dostępu do _secret
+
+print("--- hasattr ---")
+print(hasattr(obj, "_secret"))  # False
+
+print("--- obejscie ---")
+print(object.__getattribute__(obj, "_secret"))
+# --- obejscie ---
+# tajne dane
+
+print("--- dict ---")
+print(obj.__dict__)
+# {'public': 'widoczne dane', '_secret': 'tajne dane'}
