@@ -23,7 +23,7 @@ class Order:
         return sum(item.total_price() for item in self.items)
 
     def summary(self) -> str:
-        item_details = "\n".join(f"{item.product.anme} x {item.quantity} - {item.total_price()} zł"
+        item_details = "\n".join(f"{item.product.name} x {item.quantity} - {item.total_price()} zł"
                                  for item in self.items)
 
         return (f"Zamówienie dla: {self.customer.full_name()}: \n"
