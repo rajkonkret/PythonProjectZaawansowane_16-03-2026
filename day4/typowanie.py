@@ -21,3 +21,12 @@ from typing import List, Tuple, Union
 Coordinate = Tuple[float, float]
 Path = List[Coordinate]
 CoordinateError = Union[Coordinate, int]
+
+
+def validate_coordinaate(coord: CoordinateError) -> bool:
+    if isinstance(coord, str):
+        print(f"Error: {coord}")
+        return False
+    return True
+
+
