@@ -85,3 +85,13 @@ class Robot:
 def start_race(participiant: Runner) -> None:
     print(participiant.run())
     print(participiant.finish_time())
+
+
+athlete = Athlete()
+robot = Robot()
+start_race(athlete)
+start_race(robot)
+# Athlete is running
+# 1.15
+# robot is running
+# 1.12
