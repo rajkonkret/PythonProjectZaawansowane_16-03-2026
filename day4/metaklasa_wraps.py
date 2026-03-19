@@ -18,8 +18,18 @@ def debugmethods(cls):
     return cls
 
 
-@debugmethods
-class Calc:
+class DebugMeta(type):
+    def __new__(cls, name, bases, attrs):
+        obj = super().__new__(cls, name, bases, attrs)
+        obj = debugmethods(obj)
+        return obj
+
+
+class Base(metaclass=DebugMeta):
+    pass
+
+
+class Calc(Base):
     def add(self, x, y):
         return (x + y) * 10
 
