@@ -53,3 +53,35 @@ example_path = [(0.0, 1.0), (2.5, 3.5), (4.0, -1.2), ("True", True)]
 print(validate_coordinaate(example_path[-1]))  # ostatni element -> ("True", True)
 # Error: ('True', True)
 # False
+
+# Protocol
+from typing import Protocol
+
+
+class Runner(Protocol):
+    def run(self) -> str:
+        ...
+
+    def finish_time(self) -> float:
+        ...
+
+
+class Athlete:
+    def run(self) -> str:
+        return "Athlete is running"
+
+    def finish_time(self):
+        return 1.15
+
+
+class Robot:
+    def run(self) -> str:
+        return "robot is running"
+
+    def finish_time(self) -> float:
+        return 1.12
+
+
+def start_race(participiant: Runner) -> None:
+    print(participiant.run())
+    print(participiant.finish_time())
