@@ -17,3 +17,6 @@ class StringProcessor:
         return [item.upper() for item in data if isinstance(item, str)]
 
 
+# przyjmuje obiekt zgodny z protokołem DataProcessor
+def process_data(processor: DataProcessor, data: List[Any]) -> List[Any]:
+    return processor.process(data)
