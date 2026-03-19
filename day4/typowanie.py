@@ -139,3 +139,13 @@ stack.push(12)
 stack.push(8.8)
 stack.push("abcz")
 print(stack.pop())  # abcz
+
+from typing import Literal
+
+
+def set_status(status: Literal['active', 'inactive', 'pending']) -> str:
+    return f"Status to: {status}"
+
+
+print(set_status('active'))  # Status to: active
+print(set_status('destroy'))  # Status to: destroy
