@@ -24,6 +24,13 @@ class DebugMeta(type):
         obj = debugmethods(obj)
         return obj
 
+    # dodanie metody do obiektu z klasy
+    def __init__(cls, name, bases, attrs):
+        cls.fc = cls.fc
+
+    def fc(cls):
+        return "Bardzo ważna informacja"
+
 
 class Base(metaclass=DebugMeta):
     pass
@@ -66,3 +73,18 @@ print(mc.wart)
 # 1110
 
 print(mc.stala)  # 9.81 -> to nie jest funkcja
+
+print(mc.fc())  # Bardzo ważna informacja
+# __static_attributes__ ()
+# __doc__ None
+# Pełna nazwa metody: Calc.add
+# 110
+# Pełna nazwa metody: Calc.mul
+# 2800
+# Pełna nazwa metody: Calc.div
+# 0.23529411764705882
+# Pełna nazwa metody: Calc.add
+# Pełna nazwa metody: Calc.mul
+# 1110
+# 9.81
+# Bardzo ważna informacja
