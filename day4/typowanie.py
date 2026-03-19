@@ -111,3 +111,23 @@ class Stack(Generic[T]):
 
     def pop(self) -> T:
         return self._container.pop()
+
+
+stack = Stack[int]()
+stack.push(10)
+stack.push(12)
+stack.push(8.8)
+stack.push("abcz")
+print(stack.pop())  # abcz
+
+
+# nowsze podejście, od python 3.12
+class Stack[V]:
+    def __init__(self) -> None:
+        self._container: list[V] = []
+
+    def push(self, item: V) -> None:
+        self._container.append(item)
+
+    def pop(self) -> V:
+        return self._container.pop()
