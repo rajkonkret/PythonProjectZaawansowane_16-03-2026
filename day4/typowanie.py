@@ -30,3 +30,5 @@ def validate_coordinaate(coord: CoordinateError) -> bool:
     return True
 
 
+example_path = [(0.0, 1.0), (2.5, 3.5), (4.0, -1.2), ("True", True)]
+
