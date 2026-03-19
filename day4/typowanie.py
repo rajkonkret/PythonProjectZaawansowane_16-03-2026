@@ -31,4 +31,25 @@ def validate_coordinaate(coord: CoordinateError) -> bool:
 
 
 example_path = [(0.0, 1.0), (2.5, 3.5), (4.0, -1.2), ("True", True)]
+print(validate_coordinaate(example_path[-1]))  # True
+print(validate_coordinaate("Invalidate coordinate"))
+# Error: Invalidate coordinate
+# False
 
+
+g = get_origin(Coordinate)
+print(g)  # <class 'tuple'>
+
+
+# poszczególne elemnty
+def validate_coordinaate(coord: Coordinate) -> bool:
+    if isinstance(coord, get_origin(Coordinate)):
+        print(f"Error: {coord}")
+        return False
+    return True
+
+
+example_path = [(0.0, 1.0), (2.5, 3.5), (4.0, -1.2), ("True", True)]
+print(validate_coordinaate(example_path[-1]))  # ostatni element -> ("True", True)
+# Error: ('True', True)
+# False
