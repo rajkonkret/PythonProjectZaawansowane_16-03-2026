@@ -131,3 +131,11 @@ class Stack[V]:
 
     def pop(self) -> V:
         return self._container.pop()
+
+
+stack = Stack[int]()
+stack.push(10)
+stack.push(12)
+stack.push(8.8)
+stack.push("abcz")
+print(stack.pop())  # abcz
