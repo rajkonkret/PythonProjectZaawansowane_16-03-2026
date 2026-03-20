@@ -5,7 +5,6 @@ description = "Add your description here"
 requires-python = ">=3.14"
 dependencies = [
     "colorama>=0.4.6",
-    "gensim",
     "httpx>=0.28.1",
     "joblib>=1.5.3",
     "mysql-connector-python>=9.6.0",
