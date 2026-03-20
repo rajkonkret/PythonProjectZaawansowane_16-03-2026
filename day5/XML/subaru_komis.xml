@@ -12,4 +12,17 @@
          <klimatyzacja>jest</klimatyzacja>
       </wyposazenie_dod>
    </samochod>
+   <samochod>
+      <id>sam2</id>
+      <marka>Subaru</marka>
+      <model>Outback</model>
+      <pojemosc>2.5</pojemosc>
+      <rocznik>2021</rocznik>
+      <cena>123000</cena>
+      <wyposazenie_dod>
+         <kolor>cerwony metalik</kolor>
+         <klimatyzacja>jest</klimatyzacja>
+         <poduszki>4</poduszki>
+      </wyposazenie_dod>
+   </samochod>
 </autokomis>
