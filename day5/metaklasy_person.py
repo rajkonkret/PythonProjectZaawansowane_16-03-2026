@@ -15,3 +15,9 @@ def age(self):
 
 
 MetaPerson = dataclass(type("MetaPerson", (), {"__annotations__": params, "wiekosoby": property(age)}))
+
+p = MetaPerson("Roman", "Tkacz", 1976)
+print(p)
+# MetaPerson(firstname='Roman', lastname='Tkacz', year_of_birth=1976)
+print(type(p))  # <class '__main__.MetaPerson'>
+print(p.wiekosoby)  # 50
