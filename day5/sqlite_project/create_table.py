@@ -34,3 +34,10 @@ def cr():
         FOREIGN KEY (project_id) REFERENCES projects(id)
         );
         """
+
+    conn = create_connection(database)
+    if conn is not None:
+        create_table(conn, sql_create_projects_table)
+        create_table(conn, sql_create_tasks_table)
+    else:
+        print("Błąd podłączenia z bazą danych")
