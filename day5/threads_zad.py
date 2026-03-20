@@ -84,5 +84,14 @@ def main():
 if __name__ == "__main__":
     import sys;
 
-    print(sys._is_gil_enabled())
+    print(sys._is_gil_enabled())  # sprawdzenie czy GIL blokuje
     main()
+# True - GIL nas blokuje
+# CPU count: 4
+# Zakres: 10000000 .. 10400000
+#
+# [single] primes=24803, time=2.687s
+# [threads=1] primes=24803, time=2.499s, speedup=1.08x
+# [threads=2] primes=24803, time=2.511s, speedup=1.07x
+# [threads=4] primes=24803, time=2.498s, speedup=1.08x
+# [threads=8] primes=24803, time=2.509s, speedup=1.07x
