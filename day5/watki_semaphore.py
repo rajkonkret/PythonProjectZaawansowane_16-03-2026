@@ -19,7 +19,7 @@ def access_resource(thread_id):
 
 threads = []
 for i in range(10):
-    t = threading.Thread(target=access_resource, arg=(i,))
+    t = threading.Thread(target=access_resource, args=(i,))
     threads.append(t)
     t.start()
 
