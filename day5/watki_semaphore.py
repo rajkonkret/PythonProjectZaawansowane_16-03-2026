@@ -15,3 +15,15 @@ def access_resource(thread_id):
         print(f"Wątek {thread_id} zwalnia zasób po {time_to_sleep} sekund")
     finally:
         semaphore.release()
+
+
+threads = []
+for i in range(10):
+    t = threading.Thread(target=access_resource, arg=(i,))
+    threads.append(t)
+    t.start()
+
+for t in threads:
+    t.join()
+
+print("Wszystkie wątki zostały zakończone")
