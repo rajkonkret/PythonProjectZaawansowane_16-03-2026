@@ -17,3 +17,11 @@ def multi():
         result = pool.map(run_haveat_function, numbers)
     end_time = time.time()
     print(f"Całkowity czas wykonania wszystkich sum (mulitiprocessing): {end_time - start_time} s")
+
+
+def asynchronicznie():
+    start_time = time.time()
+    with concurrent.futures.ProcessPoolExecutor(max_workers=4) as executor:
+        result = executor.map(run_haveat_function, numbers)
+    end_time = time.time()
+    print(f"Całkowity czas wykonania wszystkich sum (ProcessPoolExecutor): {end_time - start_time} s")
