@@ -7,7 +7,7 @@ def create_project(conn, project):
     """
 
     cur = conn.cursor()
-    cur.execute(sql, project)
+    cur.execute(sql, project)  # ("Radek",) musi byc kolekcja
     conn.commit()
     return cur.lastrowid
 
@@ -21,3 +21,21 @@ def create_task(conn, task):
     cur.execute(sql, task)
     conn.commit()
     return cur.lastrowid
+
+
+def insert():
+    database = "mojabaza1.db"
+    conn = create_connection(database)
+
+    with conn:
+        project1 = ("Super Apka -> Python Data", '2023-12-30', '2024-02-10')
+        project_id_1 = create_project(conn, project1)
+
+        project2 = ("Sieć neuronowa -> Python", '2023-12-28', '2024-06-12')
+        project_id_2 = create_project(conn, project2)
+
+        task11 = ("Analiza wymagań dotyczących aplikacji", 1, 1, project_id_1, '2023-12-27', '2023-12-30')
+        task12 = ("Przygotowanie diagramów UML", 2, 1, project_id_1, "2024-01-03", '2024-01-15')
+
+        task21 = ("Analiza wymagań dotyczących aplikacji", 1, 1, project_id_2, '2024-01-02', '2024-01-05')
+        task22 = ("Przygotowanie modelu sieci neuronowej", 3, 1, project_id_2, "2024-02-03", '2024-02-15')
