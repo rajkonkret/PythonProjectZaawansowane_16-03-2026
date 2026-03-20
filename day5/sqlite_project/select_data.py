@@ -19,6 +19,15 @@ def select_all_projects(conn):
         print(row)
 
 
+def select_task_by_priority(conn, priority):
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM tasks WHERE priority=?", (priority,))
+
+    rows = cur.fetchall()
+    for row in rows:
+        print(row)
+
+
 def select():
     database = "mojabaza1.db"
     conn = create_connection(database)
@@ -29,3 +38,6 @@ def select():
 
         print("2. Wszystkie zadania: ")
         select_all_tasks(conn)
+
+        print("3. Zadania o priorytecie 2")
+        select_task_by_priority(conn, 2)

@@ -18,3 +18,6 @@ if __name__ == '__main__':
 # (2, 'Przygotowanie diagramów UML', 2, 1, 3, '2024-01-03', '2024-01-15')
 # (3, 'Analiza wymagań dotyczących aplikacji', 1, 1, 4, '2024-01-02', '2024-01-05')
 # (4, 'Przygotowanie modelu sieci neuronowej', 3, 1, 4, '2024-02-03', '2024-02-15')
+
+# 3. Zadania o priorytecie 2
+# (2, 'Przygotowanie diagramów UML', 2, 1, 3, '2024-01-03', '2024-01-15')
