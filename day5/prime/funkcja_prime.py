@@ -2,7 +2,7 @@ def find_the_sum_pime_nums(minimum, maximum):
     total = 0
     for number in range(minimum, maximum + 1):
         count = 0
-        for i in range(2, (number / / 2 + 1)):
+        for i in range(2, (number // 2 + 1)):
             if number % i == 0:
                 count += 1
                 break
