@@ -44,3 +44,41 @@ class Uchwytfilmu(xml.sax.ContentHandler):
             self.czas_t = content
         elif self.CurrentData == "gatunek":
             self.gatunek = content
+
+
+parser = xml.sax.make_parser()
+parser.setFeature(xml.sax.handler.feature_namespaces, 0)
+
+handler = Uchwytfilmu()
+parser.setContentHandler(handler)
+parser.parse('filmy.xml')
+# --- film ---
+# Tytuł filmu: Gwiezdne Wojny
+# Rok produkcji filmu: 2019
+# Kraj produkcji filmu: USA
+# Czas trwania filmu: 140
+# Gatunek filmu: SF
+# --- film ---
+# Tytuł filmu: Ostatni Samuraj
+# Rok produkcji filmu: 2001
+# Kraj produkcji filmu: USA
+# Czas trwania filmu: 145
+# Gatunek filmu: Historyczny
+# --- film ---
+# Tytuł filmu: Obecność 2
+# Rok produkcji filmu: 2015
+# Kraj produkcji filmu: USA
+# Czas trwania filmu: 121
+# Gatunek filmu: Horror
+# --- film ---
+# Tytuł filmu: Kameleon
+# Rok produkcji filmu: 2011
+# Kraj produkcji filmu: USA
+# Czas trwania filmu: 98
+# Gatunek filmu: Komedia
+# --- film ---
+# Tytuł filmu: Ogniem i mieczem
+# Rok produkcji filmu: 2000
+# Kraj produkcji filmu: Polska
+# Czas trwania filmu: 178
+# Gatunek filmu: Historyczny
