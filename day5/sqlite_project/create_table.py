@@ -8,3 +8,16 @@ def create_table(conn, create_table_sql):
         c.execute(create_table_sql)
     except Error as e:
         print(e)
+
+
+def cr():
+    database = "mojabaza1.db"
+
+    sql_create_projects_table = """
+    CREATE TABLE IF NOT EXISTS projects(
+    id integer PRIMARY KEY,
+    name text NOT NULL,
+    begin_date text,
+    end_date text
+    );
+    """
