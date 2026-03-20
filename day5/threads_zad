@@ -1,0 +1,88 @@
+import math
+import time
+import os
+from concurrent.futures import ThreadPoolExecutor
+
+
+def is_prime(n: int) -> bool:
+    if n < 2:
+        return False
+    if n == 2:
+        return True
+    if n % 2 == 0:
+        return False
+
+    limit = int(math.sqrt(n)) + 1
+    for i in range(3, limit, 2):
+        if n % i == 0:
+            return False
+    return True
+
+
+def count_primes_in_range(start: int, end: int) -> int:
+    count = 0
+    for n in range(start, end):
+        if is_prime(n):
+            count += 1
+    return count
+
+
+def run_single_thread(start: int, end: int):
+    t0 = time.perf_counter()
+    result = count_primes_in_range(start, end)
+    t1 = time.perf_counter()
+    return result, t1 - t0
+
+
+def run_multi_thread(start: int, end: int, workers: int):
+    size = end - start
+    chunk = size // workers
+    ranges = []
+
+    s = start
+    for i in range(workers):
+        e = s + chunk
+        if i == workers - 1:
+            e = end
+        ranges.append((s, e))
+        s = e
+
+    t0 = time.perf_counter()
+
+    with ThreadPoolExecutor(max_workers=workers) as ex:
+        futures = [
+            ex.submit(count_primes_in_range, s, e)
+            for s, e in ranges
+        ]
+        result = sum(f.result() for f in futures)
+
+    t1 = time.perf_counter()
+    return result, t1 - t0
+
+
+def main():
+    start = 10_000_000
+    end = 10_400_000
+    workers_list = [1, 2, 4, 8]
+
+    print(f"CPU count: {os.cpu_count()}")
+    print(f"Zakres: {start} .. {end}")
+    print()
+
+    result_single, time_single = run_single_thread(start, end)
+    print(f"[single] primes={result_single}, time={time_single:.3f}s")
+
+    for workers in workers_list:
+        result_mt, time_mt = run_multi_thread(start, end, workers)
+        speedup = time_single / time_mt
+        print(
+            f"[threads={workers}] primes={result_mt}, "
+            f"time={time_mt:.3f}s, speedup={speedup:.2f}x"
+        )
+
+
+if __name__ == "__main__":
+    import sys;
+
+    print(sys._is_gil_enabled())
+    main()
