@@ -1,5 +1,6 @@
 from xml.etree.ElementTree import Element, SubElement
 import xml.etree.ElementTree as ET
+from pretify import pretty
 
 top = Element('autokomis')
 
@@ -33,3 +34,7 @@ klima = SubElement(wyp_dod, "klimatyzacja")
 klima.text = "jest"
 
 print(top)
+print(pretty(top))
+
+with open("subaru_komis.xml", "w", encoding='utf-8') as f:
+    f.write(pretty(top))

@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<autokomis>
+   <samochod>
+      <id>sam1</id>
+      <marka>Subaru</marka>
+      <model>Impreza</model>
+      <pojemosc>2.0</pojemosc>
+      <rocznik>2000</rocznik>
+      <cena>64000</cena>
+      <wyposazenie_dod>
+         <kolor>czarna perła</kolor>
+         <klimatyzacja>jest</klimatyzacja>
+      </wyposazenie_dod>
+   </samochod>
+</autokomis>
