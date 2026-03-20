@@ -8,4 +8,5 @@ dependencies = [
     "numpy>=2.4.3",
     "peewee>=4.0.2",
     "pydantic>=2.12.5",
+    "sqlalchemy>=2.0.48",
 ]
