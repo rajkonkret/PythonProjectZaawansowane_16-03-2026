@@ -22,3 +22,4 @@ print("Zakończone")
 # Sześcian wrtości 1000 wynosi: 1000000000
 # Kwadrat wartości 100 wynosi: 10000
 # Zakończone
+# https://towardsdatascience.com/python-3-14-and-the-end-of-the-gil/
