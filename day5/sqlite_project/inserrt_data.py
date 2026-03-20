@@ -39,3 +39,8 @@ def insert():
 
         task21 = ("Analiza wymagań dotyczących aplikacji", 1, 1, project_id_2, '2024-01-02', '2024-01-05')
         task22 = ("Przygotowanie modelu sieci neuronowej", 3, 1, project_id_2, "2024-02-03", '2024-02-15')
+
+        create_task(conn, task11)
+        create_task(conn, task12)
+        create_task(conn, task21)
+        create_task(conn, task22)
